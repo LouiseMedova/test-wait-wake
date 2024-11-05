@@ -1,0 +1,24 @@
+[package]
+name = "sender"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sender-app = { path = "app" }
+
+[build-dependencies]
+sender-app = { path = "app" }
+sails-rs = { version = "0.6.2", features = ["wasm-builder"] }
+sails-idl-gen = "0.6.2"
+
+[dev-dependencies]
+sender = { path = ".", features = ["wasm-binary"] }
+sender-client = { path = "client" }
+sails-rs = { version = "0.6.2", features = ["gtest"] }
+tokio = { version = "1.41", features = ["rt", "macros"] }
+waker = { path = "../waker", features = ["wasm-binary"] }
+waker-client = { path = "../waker/client" }
+
+
+[features]
+wasm-binary = []
